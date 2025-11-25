@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   TextInput,
@@ -20,7 +20,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 function timeoutPromise<T>(ms: number, promise: Promise<T>) {
   return new Promise<T>((resolve, reject) => {
     const timer = setTimeout(() => {
-      reject(new Error(`Tiempo de espera agotado después de ${ms} ms`));
+      reject(new Error('Tiempo de espera agotado después de ${ms} ms'));
     }, ms);
     promise
       .then((res) => {
